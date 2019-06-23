@@ -48,6 +48,7 @@ scalacOptions ++= Seq(
 )
 
 lazy val commonSettings = Seq(
+  name := "boom",
   organization := "edu.berkeley.cs",
   version := "1.2",
   scalaVersion := scalaVer,
@@ -66,7 +67,7 @@ lazy val commonSettings = Seq(
 // normal `project in file()` declaration, sbt would ignore all of rocket-chip's
 // build settings, and therefore not understand that it has its own dependencies
 // on chisel, etc.
-lazy val core = RootProject(file("rocket-chip"))
+lazy val core = RootProject(file("rocket"))
 
 lazy val top = (project in file("."))
   .dependsOn(core)
